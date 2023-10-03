@@ -10,8 +10,8 @@ SELECT * FROM `Movies` ORDER BY realizedAt DESC
 <h3>Les noms, prénoms et âges des acteurs/actrices de plus de 30 ans dans l'ordre alphabétique</h3>
 
 ```sql
-SELECT firstname, lastname, birthday<br/>
-FROM `Actors`<br/>
+SELECT firstname, lastname, birthday
+FROM `Actors`
 WHERE birthday <= DATE_SUB(CURRENT_DATE, INTERVAL 30 YEAR)
 ORDER BY firstname ASC;
 ```
