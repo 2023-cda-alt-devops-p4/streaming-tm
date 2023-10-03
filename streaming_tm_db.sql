@@ -61,7 +61,8 @@ VALUES
     ('Leonardo', 'DiCaprio', '1974-11-11'),
     ('Brad', 'Pitt', '1963-12-18'),
     ('Jennifer', 'Aniston', '1969-02-11'),
-    ('Scarlett', 'Johansson', '1984-11-22');
+    ('Scarlett', 'Johansson', '1984-11-22'),
+    ('Noah', 'Schnapp', '2004-10-03');
 
 INSERT INTO Directors (firstname, lastname)
 VALUES
