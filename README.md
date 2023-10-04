@@ -3,7 +3,7 @@
 <h4>Les titres et dates de sortie des films du plus récent au plus ancien</h4>
 
 ```sql
-SELECT * FROM `Movies` ORDER BY realizedAt DESC
+SELECT * FROM Movies ORDER BY realizedAt DESC
 ```
 ##
 
@@ -11,7 +11,7 @@ SELECT * FROM `Movies` ORDER BY realizedAt DESC
 
 ```sql
 SELECT firstname, lastname, birthday
-FROM `Actors`
+FROM Actors
 WHERE birthday <= DATE_SUB(CURRENT_DATE, INTERVAL 30 YEAR)
 ORDER BY firstname ASC;
 ```
@@ -54,17 +54,23 @@ VALUES ('John', 'Doe', '2000-01-10');
 <h4>Modifier un film</h4>
 
 ```sql
-
+UPDATE Movies
+SET title = 'Nouveau titre'
+WHERE Id_Movies = 1;
 ```
 
 <h4>Supprimer un acteur/actrice</h4>
 
 ```sql
-
+DELETE FROM Casting WHERE Id_Actors = 1;
+DELETE FROM Actors WHERE Id_Actors = 1;
 ```
 
 <h4>Afficher les 3 derniers acteurs/actrices ajouté(e)s</h4>
 
 ```sql
-
+SELECT *
+FROM Actors
+ORDER BY Id_Actors DESC
+LIMIT 3;
 ```
