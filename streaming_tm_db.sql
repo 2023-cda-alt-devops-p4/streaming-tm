@@ -34,7 +34,9 @@ CREATE TABLE Archives(
    updatedAt DATETIME NOT NULL,
    oldValue VARCHAR(255) NOT NULL,
    newValue VARCHAR(255) NOT NULL,
-   PRIMARY KEY(Id_Archives)
+   Id_Users INT NOT NULL,
+   PRIMARY KEY(Id_Archives),
+   FOREIGN KEY(Id_Users) REFERENCES Users(Id_Users)
 );
 
 CREATE TABLE Movies(
@@ -61,14 +63,6 @@ CREATE TABLE Casting(
    PRIMARY KEY(Id_Movies, Id_Actors),
    FOREIGN KEY(Id_Movies) REFERENCES Movies(Id_Movies),
    FOREIGN KEY(Id_Actors) REFERENCES Actors(Id_Actors)
-);
-
-CREATE TABLE Updates(
-   Id_Users INT,
-   Id_Archives INT,
-   PRIMARY KEY(Id_Users, Id_Archives),
-   FOREIGN KEY(Id_Users) REFERENCES Users(Id_Users),
-   FOREIGN KEY(Id_Archives) REFERENCES Archives(Id_Archives)
 );
 
 INSERT INTO Actors (firstname, lastname, birthday)
