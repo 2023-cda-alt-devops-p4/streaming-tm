@@ -1,6 +1,3 @@
-DROP DATABASE IF EXISTS streaming_tm_db;
-CREATE DATABASE streaming_tm_db;
-
 USE streaming_tm_db;
 
 CREATE TABLE Actors(
