@@ -6,7 +6,7 @@
 Pour démarrer le projet streaming-tm, il vous faut ces logiciels d'installées :
 
 - Docker
-- MySQL Workbench ou un autres client SQL.
+- MySQL Workbench ou un autre client SQL.
 
 ##
 
