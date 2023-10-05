@@ -1,4 +1,75 @@
-# Streaming-TM 
+### Streaming-TM 
+
+<h2>Getting Started</h2>
+<h3>Prérequis</h3>
+
+Pour démarrer le projet streaming-tm, il vous faut ces logiciels d'installées :
+
+- Docker
+- MySQL Workbench ou un autres client SQL.
+
+##
+
+<h3>Comment initialiser le projet ?</h3>
+
+Cloner le projet
+```
+git clone https://github.com/2023-cda-alt-devops-p4/streaming-tm.git
+```
+<br/>
+
+Déployer le container (Attention d'être dans la racine du projet en exécutant la commande)
+```
+docker compose up
+```
+<br/>
+
+Il vous faudra ensuite vous connecter à la base de données, vous pouvez modifier les accès à la base de données dans le fichier `.env`
+
+Une fois connecté, exécuter le script SQL du fichier `streaming_tm_db.sql`, cela permettra de créer toutes les tables et les données.
+
+Pour ajouter le trigger à la table Users, exécuter le script SQL du fichier `streaming_tm_trigger.sql`.
+
+Pour ajouter la procédure afin de recherche les films d'un réalisateur en particulier, exécuter le script SQL du fichier `streaming_tm_procedure.sql`.
+
+##
+
+<h3>Comment utiliser la procédure ? Exécutez la requête SQL suivantes</h3>
+
+```sql
+USE streaming_tm_db;
+CALL findMoviesByDirector('Christopher');
+```
+
+<br/>
+
+##
+
+<h3>Pour éteindre le projet (Attention d'être dans la racine du projet en exécutant la commande)</h3>
+
+```
+docker composer down
+```
+
+<br/>
+
+##
+
+<h3>Les configurations dans l'environnement</h3>
+
+`MYSQL_ROOT_PASSWORD` : Le mot de passe par défaut du root est `password`, vous pouvez le changer si vous voulez avec cette variable d'environnement.
+
+`MYSQL_DATABASE`: Il s'agit de la base de données créer par défaut, la base de données par défaut s'appelle `streaming_tm_db`, vous pouvez la changer mais n'oubliez pas de changer `USE streaming_tm_db;` dans le fichier `streaming_tm_db.sql`.
+
+`MYSQL_USER`: Il s'agit du nom de l'utilisateur qui aura un accès complet à `MYSQL_DATABASE`, il ne s'agit pas du root ! L'utilisateur par défaut est `johndoe`
+
+`MYSQL_PASSWORD`: Il s'agit du mot de passe pour `MYSQL_USER`, le mot de passe par défaut est `password`
+
+`PORT`: Il s'agit du port du container et donc du port pour accéder à votre base de données, par défaut le port est `3306`
+
+<br/>
+
+<h2>Requêtes SQL</h2>
 
 <h4>Les titres et dates de sortie des films du plus récent au plus ancien</h4>
 
