@@ -133,7 +133,6 @@ WHERE Id_Movies = 1;
 <h4>Supprimer un acteur/actrice</h4>
 
 ```sql
-DELETE FROM Casting WHERE Id_Actors = 1;
 DELETE FROM Actors WHERE Id_Actors = 1;
 ```
 

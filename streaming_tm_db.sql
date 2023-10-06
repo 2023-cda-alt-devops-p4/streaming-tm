@@ -50,16 +50,16 @@ CREATE TABLE Favorites(
    Id_Movies INT,
    Id_Users INT,
    PRIMARY KEY(Id_Movies, Id_Users),
-   FOREIGN KEY(Id_Movies) REFERENCES Movies(Id_Movies),
-   FOREIGN KEY(Id_Users) REFERENCES Users(Id_Users)
+   FOREIGN KEY(Id_Movies) REFERENCES Movies(Id_Movies) ON DELETE CASCADE,
+   FOREIGN KEY(Id_Users) REFERENCES Users(Id_Users) ON DELETE CASCADE
 );
 
 CREATE TABLE Casting(
    Id_Movies INT,
    Id_Actors INT,
    PRIMARY KEY(Id_Movies, Id_Actors),
-   FOREIGN KEY(Id_Movies) REFERENCES Movies(Id_Movies),
-   FOREIGN KEY(Id_Actors) REFERENCES Actors(Id_Actors)
+   FOREIGN KEY(Id_Movies) REFERENCES Movies(Id_Movies) ON DELETE CASCADE,
+   FOREIGN KEY(Id_Actors) REFERENCES Actors(Id_Actors) ON DELETE CASCADE
 );
 
 INSERT INTO Actors (firstname, lastname, birthday)
